@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тапшырмалар</title>
+    <style>
+        .task-container {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .task-container h3 {
+            margin: 0 0 5px 0;
+        }
+        .complete-task {
+            padding: 10px 15px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .complete-task:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="task-container">
+    <h3>Досторуңду чакыруу</h3>
+    <p>Досуңду чакырып, 100 монета ал.</p>
+    <button class="complete-task" onclick="completeTask('invite')">Тапшырманы аткаруу</button>
+</div>
+
+<div class="task-container">
+    <h3>Каналга каттал</h3>
+    <p>Бул каналга каттал жана 50 монета ал.</p>
+    <button class="complete-task" onclick="completeTask('subscribe')">Тапшырманы аткаруу</button>
+</div>
+
+<div class="task-container">
+    <h3>Видео көрүү</h3>
+    <p>Видео көрүп, 20 монета ал.</p>
+    <button class="complete-task" onclick="completeTask('watchVideo')">Тапшырманы аткаруу</button>
+</div>
+
+<script>
+    // Тапшырмалардын логикасы
+    function completeTask(taskType) {
+        if (taskType === 'invite') {
+            alert('Дос чакырылып, 100 монета берилди!');
+            // Монеталар кошулат
+        } else if (taskType === 'subscribe') {
+            alert('Каналга катталганын текшерүүдө, 50 монета кошулат.');
+            // Катталуу аткарылат
+        } else if (taskType === 'watchVideo') {
+            alert('Видео көрүлдү, 20 монета берилди.');
+            // Видео көрүү аякталганын текшерүү
+        }
+    }
+</script>
+
+</body>
+</html>
