@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViphGramCoin Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .profile-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .profile-container img {
+            width: 100px;
+            border-radius: 50%;
+        }
+        .profile-container h2 {
+            margin: 10px 0;
+        }
+        .invite-link {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .invite-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <img src="https://via.placeholder.com/100" alt="Profile Picture">
+    <h2 id="userName">User's Name</h2>
+    <p><strong>Monetalar:</strong> <span id="userCoins">0</span></p>
+    <a id="inviteLink" class="invite-link" href="#">Чакыруу шилтемеси</a>
+</div>
+
+<script>
+    // Telegram Web App initialization
+    const tg = window.Telegram.WebApp;
+
+    // Колдонуучунун аты-жөнүн жана чакыруу шилтемесин алуу
+    document.getElementById('userName').innerText = tg.initDataUnsafe.user.first_name;
+
+    // Колдонуучунун уникалдуу чакыруу шилтемеси
+    const uniqueCode = tg.initDataUnsafe.user.id;
+    document.getElementById('inviteLink').href = `https://t.me/ViphGramCoin_bot/start?startapp=${uniqueCode}`;
+
+    // Демейки монеталардын саны (потом API менен байланыштырабыз)
+    let coins = 0;
+    document.getElementById('userCoins').innerText = coins;
+</script>
+
+</body>
+</html>
